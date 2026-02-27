@@ -31,9 +31,7 @@
       }
     },
     "owner": "carlosefg",
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
       "url": "https://u.expo.dev/10195a78-a1b9-4bd0-9532-4fec615e2358"
     }
