@@ -30,12 +30,26 @@ if not exist "node_modules" (
     call npm install
 )
 
-REM Iniciar o Expo
-echo 🌐 Iniciando Expo Development Server...
+REM Iniciar o Expo Web
+echo 🌐 Iniciando Klass Web...
 echo.
-echo Para testar o app:
-echo   - Baixe o Expo Go no seu celular
-echo   - Escaneie o QR code que aparecerá
-echo   - Ou pressione 'w' para abrir no navegador
+echo 🚀 Abrindo aplicação no navegador...
 echo.
-call npm start
+
+REM Iniciar a versão web do Vite em segundo plano
+start /B cmd /c "npm run dev"
+
+REM Aguardar alguns segundos para o servidor iniciar
+timeout /t 8 /nobreak > nul
+
+REM Abrir o navegador automaticamente
+start http://localhost:3000
+
+echo.
+echo ✅ Aplicação iniciada!
+echo   Frontend (Web): http://localhost:3000
+echo   Backend API: http://localhost:3001
+echo.
+echo Para parar a aplicação, execute: stopApp.bat
+echo.
+pause
