@@ -7,14 +7,14 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "node": "18.x"
+      "node": "20.x"
     },
     "preview": {
       "distribution": "internal",
-      "node": "18.x"
+      "node": "20.x"
     },
     "production": {
-      "node": "18.x"
+      "node": "20.x"
     }
   },
   "submit": {
