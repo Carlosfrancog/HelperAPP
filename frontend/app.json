@@ -4,14 +4,8 @@
     "slug": "klass",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "klass",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#667eea"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -20,14 +14,9 @@
       "bundleIdentifier": "com.klass"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#667eea"
-      },
       "package": "com.klass"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -41,6 +30,12 @@
         "projectId": "10195a78-a1b9-4bd0-9532-4fec615e2358"
       }
     },
-    "owner": "carlosefg"
+    "owner": "carlosefg",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/10195a78-a1b9-4bd0-9532-4fec615e2358"
+    }
   }
 }
