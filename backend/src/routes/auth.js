@@ -60,22 +60,38 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log("Login attempt:", {
+      email,
+      passwordLength: password?.length,
+      passwordChars: password?.split("").map((c) => c.charCodeAt(0)),
+      passwordRaw: JSON.stringify(password),
+    });
+
     // Validação
     if (!email || !password) {
-      return res.status(400).json({ error: 'Email e senha são obrigatórios' });
+      return res.status(400).json({ error: "Email e senha são obrigatórios" });
     }
 
     // Buscar usuário
-    const result = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
 
     if (result.rows.length === 0) {
-      return res.status(401).json({ error: 'Email ou senha inválidos' });
+      console.log("User not found:", email);
+      return res.status(401).json({ error: "Email ou senha inválidos" });
     }
 
     const user = result.rows[0];
 
     // Verificar senha
     const validPassword = await bcrypt.compare(password, user.password);
+
+    console.log("Password validation:", {
+      email,
+      validPassword,
+      storedHashPrefix: user.password.substring(0, 20),
+    });
 
     if (!validPassword) {
       return res.status(401).json({ error: 'Email ou senha inválidos' });
