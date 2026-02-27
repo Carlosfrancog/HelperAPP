@@ -1,16 +1,21 @@
 {
   "cli": {
-    "version": ">= 5.0.0"
+    "version": ">= 5.0.0",
+    "packageManager": "npm"
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "node": "18.x"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "node": "18.x"
     },
-    "production": {}
+    "production": {
+      "node": "18.x"
+    }
   },
   "submit": {
     "production": {}
